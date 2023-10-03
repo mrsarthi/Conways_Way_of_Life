@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conway's Game of Life</title>
+</head>
+
+<body>
+    <h1>Conway's Game of Life</h1>
+    <canvas id="gameCanvas" width="800" height="800"></canvas>
+    <button id="startButton">Start</button>
+    <button id="pauseButton">Pause</button>
+    <button id="clearButton">Clear</button>
+    <button id="generateButton">Generate</button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pyscript/1.0.0/pyscript.min.js"></script>
+    <script type="module">
+        import(main.py)  // Replace with the actual path to your Python script
+            .then(module => {
+                // Call Python functions from the loaded module
+                const adjustGrid = module.default.adjust_grid;
+
+                const canvas = document.getElementById("gameCanvas");
+                const startButton = document.getElementById("startButton");
+                const pauseButton = document.getElementById("pauseButton");
+                const clearButton = document.getElementById("clearButton");
+                const generateButton = document.getElementById("generateButton");
+
+                // Rest of your JavaScript code here
+                // ...
+            })
+            .catch(error => {
+                console.error('Failed to load Python script:', error);
+            });
+    </script>
+</body>
+
+</html>
